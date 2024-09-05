@@ -12,6 +12,8 @@ using Samples.Whisper;
 
 public class DestinationChange : MonoBehaviour
 {
+    public AudioSource StartSFX;
+
     [SerializeField]
     private AbstractMap _map;  // 기존 맵을 참조
 
@@ -58,6 +60,7 @@ public class DestinationChange : MonoBehaviour
 
         // 맵을 업데이트
         log4.text = "경로를안내합니다";
+        StartSFX.Play();
         _map.UpdateMap(coordinates, _map.Zoom);  // 기존 줌 레벨을 사용하여 맵 중심을 업데이트
         Destination.transform.position = Vector3.zero;
         
