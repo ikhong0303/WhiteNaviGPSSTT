@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Inspector
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -792,11 +792,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.64124227, y: -0.016804382, z: 0.014043693, w: -0.7670371}
     speed: 2
-    m_Value: {x: -0.641215, y: -0.017954765, z: 0.0150054125, w: -0.7670045}
+    m_Value: {x: -0.6412368, y: -0.016804239, z: 0.014043573, w: -0.76703054}
   m_Size:
     m_Target: 35.962543
     speed: 2
-    m_Value: 37.657112
+    m_Value: 35.962543
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -858,9 +858,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e4730000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 84dbffffd2dbfffff6dfffff26fbffffda750000e2750000
+      m_SelectedIDs: e66c0000
+      m_LastClickedID: 27878
+      m_ExpandedIDs: 26fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

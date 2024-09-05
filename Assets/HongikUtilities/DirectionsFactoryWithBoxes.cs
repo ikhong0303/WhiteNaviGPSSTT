@@ -131,9 +131,6 @@ public class DirectionsFactoryWithBoxes : MonoBehaviour
 
     void Update()
     {
-        if (boxes.Count == 0) return; // 박스가 없으면 return
-
-        // 가장 가까운 박스를 찾음
         GameObject closestBox = FindClosestBox();
 
         if (closestBox != null)
@@ -153,6 +150,18 @@ public class DirectionsFactoryWithBoxes : MonoBehaviour
             {
                 Destroy(closestBox);
                 boxes.Remove(closestBox);
+            }
+        }
+        else
+        {
+            // 박스가 없을 때 waypoint[1]로 회전
+            Vector3 directionToWaypoint = _waypoints[1].position - player.position;
+            directionToWaypoint.y = 0; // Y축 회전을 위해 수평 방향만 고려
+
+            if (directionToWaypoint.sqrMagnitude > 0.1f) // 너무 짧은 거리는 회전하지 않음
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(directionToWaypoint);
+                arrow.rotation = Quaternion.Slerp(arrow.rotation, lookRotation, Time.deltaTime * 5f); // 부드럽게 회전
             }
         }
 
