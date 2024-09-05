@@ -116,10 +116,11 @@ public class DirectionsFactoryWithBoxes : MonoBehaviour
         }
         boxes.Clear();
 
-        // 경로를 따라 박스를 배치
-        foreach (var point in response.Routes[0].Geometry)
+        // 경로를 따라 박스를 배치 (첫 번째와 마지막 지점 제외)
+        var routePoints = response.Routes[0].Geometry;
+        for (int i = 1; i < routePoints.Count - 1; i++)  // 첫 번째(i=0)와 마지막(i=routePoints.Count-1) 제외
         {
-            Vector3 worldPos = Conversions.GeoToWorldPosition(point.x, point.y, _map.CenterMercator, _map.WorldRelativeScale).ToVector3xz();
+            Vector3 worldPos = Conversions.GeoToWorldPosition(routePoints[i].x, routePoints[i].y, _map.CenterMercator, _map.WorldRelativeScale).ToVector3xz();
             worldPos.y += 1f; // Y값을 1만큼 올림
 
             // 박스 생성
